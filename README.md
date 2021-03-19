@@ -1,8 +1,8 @@
-# CRUD_MySQL_React_Redux_classes
+# CRUD_MySQL_React_classes
 
 Example of CRUD basic functionality in MySQL database.
 
-    Front:      React + Redux
+    Front:      React
     Back:       Node + Express
     Database:   MySQL + Sequelize
 __________________________________________________________________
