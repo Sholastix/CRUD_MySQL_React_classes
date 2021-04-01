@@ -15,15 +15,3 @@ __________________________________________________________________
    
         3.1. npm install - needed modules installation;
         3.2. npm start - code start.
-
-4.  Available endpoints (xxxx - connection port from .env):
-
-        http://localhost:xxxx/api/products/
-        
-        GET     - get list of products.
-        POST    - add new products in list.
-        
-        http://localhost:xxxx/api/products/:id
-
-        PUT     - edit product info (by product ID).
-        DELETE  - delete product from list (by product ID).
