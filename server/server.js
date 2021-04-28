@@ -2,8 +2,7 @@ require('dotenv').config()
 const express = require('express');
 const cors = require('cors');
 
-require('./config/createDatabase')();
-require('./config/initializeDatabase')();
+const createDatabase = require('./config/createDatabase');
 const { database } = require('./config/initializeDatabase');
 const productRoute = require('./routes/productRoute');
 
@@ -15,8 +14,9 @@ app.use(cors());
 app.use('/api', productRoute);
 
 // Synchronization with DB, if success -> server starts.
-(async function () {
+(async () => {
     try {
+        await createDatabase();
         await database.sync();
         app.listen(process.env.APP_PORT, () => {
             console.log(`Server listening on port ${process.env.APP_PORT}.`);
@@ -24,4 +24,4 @@ app.use('/api', productRoute);
     } catch (err) {
         console.error(`Connection failed at port: ${process.env.APP_PORT}`, err);
     };
-}());
+})();
